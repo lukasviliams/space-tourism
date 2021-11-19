@@ -1,0 +1,73 @@
+/**************** Fonts  **********************/
+/* Bellefair */
+@import url('https://fonts.googleapis.com/css2?family=Bellefair&display=swap');
+/* Barlow */
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed&display=swap');
+
+
+/* variables */
+:root {
+    --main-color: #0b0d17;
+    --sec-color: #d0d6f9;
+    --ter-color:#ffffff;
+    --hover-color: rgba(255, 255, 255, .15);
+}
+
+/* Fonts clases and properties */
+.heading1{
+    font-family: 'bellefair';
+    font-size: 150px;
+}   
+
+.heading2 {
+    font-family: 'bellefair';
+    font-size: 100px;
+}
+.heading3{
+    font-family: 'bellefair';
+    font-size: 56px;
+}
+.heading4{
+    font-family: 'bellefair';
+    font-size: 32px;
+}
+.heading5{
+    font-family: 'barlow';
+    font-size: 28px;
+    letter-spacing: 4.75px;
+    color: var(--sec-color);
+}
+.subheding1{
+    font-family: 'bellefair';
+    font-size: 28px;
+}
+.subheding2{
+    font-family: 'barlow';
+    font-size: 14px;
+    letter-spacing: 2.35px;
+}
+.nav-text{
+    font-family: 'barlow';
+    font-size: 16px;
+    letter-spacing: 2,7px;
+    text-transform: uppercase;
+}
+.body-text{
+    font-family: 'barlow';
+    font-size: 1.8rem;
+    line-height: 3.2rem;
+    color: var(--sec-color);
+}
+/* Basic reset */
+html{
+    box-sizing: border-box;
+    color: var(--ter-color);
+    font-size: 62.5%;
+}
+*{
+    margin: 0;
+}
+
+*,*::before,*::after{
+    box-sizing: inherit;
+}
