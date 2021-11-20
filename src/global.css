@@ -11,6 +11,7 @@
     --sec-color: #d0d6f9;
     --ter-color:#ffffff;
     --hover-color: rgba(255, 255, 255, .15);
+    --shady-color:rgba(255,255,255,.25)
 }
 
 /* Fonts clases and properties */
