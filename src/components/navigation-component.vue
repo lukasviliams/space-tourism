@@ -144,6 +144,8 @@ span{
 color: rgba(255, 255, 255, 0.7);
 line-height: 8rem;
 text-decoration: none;
+border-bottom: 3px solid transparent;
+transition: all .1s ease-in-out;
 }
 #nav a.router-link-exact-active {
   text-decoration: none;
