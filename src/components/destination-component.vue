@@ -6,52 +6,52 @@
   </div>
   <div class="destination-component">
   <div class="img-container">
-    <img class="img" src="../assets/img/destination/image-moon.webp" alt="Sorry could not load the img">
+    <img class="img" :src="moonImg" alt="Sorry could not load the img">
   </div>
   <div class="tab-container">
     <div class="nav-container">
-      <p class="tabs-nav-text">Moon</p>
-      <p class="tabs-nav-text">Mars</p>
-      <p class="tabs-nav-text">Europa</p>
-      <p class="tabs-nav-text">Titan</p>
+      <p class="tabs-nav-text active-tab" ref="tab1" @click="handleMoon">Moon</p>
+      <p class="tabs-nav-text" ref="tab2" @click="handleMars">Mars</p>
+      <p class="tabs-nav-text" ref="tab3" @click="handleEuropa">Europa</p>
+      <p class="tabs-nav-text" ref="tab4" @click="handleTitan">Titan</p>
     </div>
     <div class="heading-container">
-      <div class="heading2-tabs visible">Moon</div>
-      <!-- <div class="heading2-tabs">Mars</div>
-      <div class="heading2-tabs">Europa</div>
-      <div class="heading2-tabs">Moon</div> -->
+      <div class="heading2-tabs visible" ref="heading1">Moon</div>
+      <div class="heading2-tabs" ref="heading2">Mars</div>
+      <div class="heading2-tabs" ref="heading3">Europa</div>
+      <div class="heading2-tabs" ref="heading4">Moon</div>
     </div>
-    <p class="tab-text visible">See our planet as you’ve never seen it before. A perfect relaxing trip
+    <p class="tab-text visible" ref="tabText1">See our planet as you’ve never seen it before. A perfect relaxing trip
        away to help regain perspective and come back refreshed. While you’re there, 
        take in some history by visiting the Luna 2 and Apollo 11 landing sites.
     </p>
-    <!-- <p class="tab-text">Don’t forget to pack your hiking boots. You’ll need them to tackle Olympus
+    <p class="tab-text" ref="tabText2">Don’t forget to pack your hiking boots. You’ll need them to tackle Olympus
        Mons, the tallest planetary mountain in our solar system. It’s two and a half times the size
         of Everest!
     </p>
-    <p class="tab-text">The smallest of the four Galilean moons orbiting Jupiter, Europa is a winter
+    <p class="tab-text" ref="tabText3">The smallest of the four Galilean moons orbiting Jupiter, Europa is a winter
        lover’s dream. With an icy surface, it’s perfect for a bit of ice skating, curling, hockey,
         or simple relaxation in your snug wintery cabin.
     </p>
-    <p class="tab-text">The only moon known to have a dense atmosphere other than Earth, Titan is a 
+    <p class="tab-text" ref="tabText4">The only moon known to have a dense atmosphere other than Earth, Titan is a 
       home away from home (just a few hundred degrees colder!). As a bonus, you get striking views of 
       the Rings of Saturn.
-    </p> -->
+    </p>
     <div class="line"></div>
     <div class="info-container">
       <div class="subheading-container">
         <p class="subheading2">AVG. Distance</p>
-        <p class="subheading1-tabs visible">384,400 km</p>
-        <!-- <p class="subheading1-tabs">225 MIL. km</p>
-        <p class="subheading1-tabs">628 MIL. km</p>
-        <p class="subheading1-tabs">1.6 BIL. km</p> -->
+        <p class="subheading1-tabs visible" ref="distance1">384,400 km</p>
+        <p class="subheading1-tabs" ref="distance2">225 MIL. km</p>
+        <p class="subheading1-tabs" ref="distance3">628 MIL. km</p>
+        <p class="subheading1-tabs" ref="distance4">1.6 BIL. km</p>
       </div>
       <div class="subheading-container">
         <p class="subheading2">Est. travel time</p>
-        <p class="subheading1-tabs visible">3 days</p>
-        <!-- <p class="subheading1-tabs">9 months</p>
-        <p class="subheading1-tabs">3 years</p>
-        <p class="subheading1-tabs">7 years</p> -->
+        <p class="subheading1-tabs visible" ref="travelTime1">3 days</p>
+        <p class="subheading1-tabs" ref="travelTime2">9 months</p>
+        <p class="subheading1-tabs" ref="travelTime3">3 years</p>
+        <p class="subheading1-tabs" ref="travelTime4">7 years</p>
       </div>
     </div>
   </div>
@@ -60,15 +60,139 @@
 </template>
 
 <script>
+import {  ref } from 'vue';
+import { onMounted } from '@vue/runtime-core';
 export default {
   name: 'destinationComponent', 
   setup() {
-    
+    // Variables 
+    const tabs = ref(null)
+    const headings = ref(null)
+    const tabsText = ref(null)
+    const subheadings = ref(null)
+    const tab1 = ref(null)
+    const tab2 = ref(null)
+    const tab3 = ref(null)
+    const tab4 = ref(null)
+    const heading1 = ref(null)
+    const heading2 = ref(null)
+    const heading3 = ref(null)
+    const heading4 = ref(null)
+    const tabText1 = ref(null)
+    const tabText2 = ref(null)
+    const tabText3 = ref(null)
+    const tabText4 = ref(null)
+    const distance1 = ref(null)
+    const distance2 = ref(null)
+    const distance3 = ref(null)
+    const distance4 = ref(null)
+    const travelTime1 = ref(null)
+    const travelTime2 = ref(null)
+    const travelTime3 = ref(null)
+    const travelTime4 = ref(null)
+    const moonImg = 'src/assets/img/destination/image-mars.webp'
 
-    const handleTab = () =>{
-      console.log('run the job');
+    // Query selectorAll on Mounted 
+    onMounted(()=>{
+      tabs.value = document.querySelectorAll('.tabs-nav-text')
+      headings.value = document.querySelectorAll('.heading2-tabs')
+      tabsText.value = document.querySelectorAll('.tab-text')
+      subheadings.value = document.querySelectorAll('.subheading1-tabs')
+    })
+    
+    ///////////////////////// DOM manipulation for Moon content //////////////////////////////
+    const handleMoon = () =>{
+      //Remove active class from tabs and activate tab for moon
+      tabs.value.forEach(element => {
+        element.classList.remove('active-tab')
+        tab1.value.classList.add('active-tab')
+      });
+      // Remove visible class from headings and activate heading moon
+      headings.value.forEach(element =>{
+        element.classList.remove ('visible')
+        heading1.value.classList.add('visible')
+      }) 
+      // Remove visible class from tabs text and active tab text moon
+      tabsText.value.forEach(element => element.classList.remove('visible'))
+      tabText1.value.classList.add('visible')
+      // Remove visible class from subheading class (distance and traveltime)
+      subheadings.value.forEach(element => element.classList.remove('visible'))
+      distance1.value.classList.add('visible')
+      travelTime1.value.classList.add('visible')
     }
-    return { handleTab}
+
+       ///////////////////////// DOM manipulation for Mars content //////////////////////////////
+    const handleMars = () =>{
+      //Remove active class from tabs and activate tab for moon
+      tabs.value.forEach(element => {
+        element.classList.remove('active-tab')
+        tab2.value.classList.add('active-tab')
+      });
+      // Remove visible class from headings and activate heading moon
+      headings.value.forEach(element =>{
+        element.classList.remove ('visible')
+        heading2.value.classList.add('visible')
+      }) 
+      // Remove visible class from tabs text and active tab text moon
+      tabsText.value.forEach(element => element.classList.remove('visible'))
+      tabText2.value.classList.add('visible')
+      // Remove visible class from subheading class (distance and traveltime)
+      subheadings.value.forEach(element => element.classList.remove('visible'))
+      distance2.value.classList.add('visible')
+      travelTime2.value.classList.add('visible')
+    }
+
+           ///////////////////////// DOM manipulation for Europa content //////////////////////////////
+    const handleEuropa = () =>{
+      //Remove active class from tabs and activate tab for moon
+      tabs.value.forEach(element => {
+        element.classList.remove('active-tab')
+        tab3.value.classList.add('active-tab')
+      });
+      // Remove visible class from headings and activate heading moon
+      headings.value.forEach(element =>{
+        element.classList.remove ('visible')
+        heading3.value.classList.add('visible')
+      }) 
+      // Remove visible class from tabs text and active tab text moon
+      tabsText.value.forEach(element => element.classList.remove('visible'))
+      tabText3.value.classList.add('visible')
+      // Remove visible class from subheading class (distance and traveltime)new-branch
+      subheadings.value.forEach(element => element.classList.remove('visible'))
+      distance3.value.classList.add('visible')
+      travelTime3.value.classList.add('visible')
+    }
+
+               ///////////////////////// DOM manipulation for Titan content //////////////////////////////
+    const handleTitan = () =>{
+      //Remove active class from tabs and activate tab for moon
+      tabs.value.forEach(element => {
+        element.classList.remove('active-tab')
+        tab4.value.classList.add('active-tab')
+      });
+      // Remove visible class from headings and activate heading moon
+      headings.value.forEach(element =>{
+        element.classList.remove ('visible')
+        heading4.value.classList.add('visible')
+      }) 
+      // Remove visible class from tabs text and active tab text moon
+      tabsText.value.forEach(element => element.classList.remove('visible'))
+      tabText4.value.classList.add('visible')
+      // Remove visible class from subheading class (distance and traveltime)
+      subheadings.value.forEach(element => element.classList.remove('visible'))
+      distance4.value.classList.add('visible')
+      travelTime4.value.classList.add('visible')
+    }
+    
+    return { 
+      tabs,headings,tabsText,subheadings,
+      tab1, tab2, tab3, tab4,
+      heading1, heading2, heading3, heading4, 
+      tabText1, tabText2, tabText3, tabText4,
+      distance1, distance2, distance3, distance4,
+      travelTime1, travelTime2, travelTime3, travelTime4,
+      moonImg, 
+      handleMoon, handleMars, handleEuropa, handleTitan}
   }
 }
 </script>
@@ -156,6 +280,7 @@ export default {
   font-size: 100px;
   text-transform: uppercase;
   margin-bottom: 2vh;
+  transition: all .5s;
 }
 .tab-text{
   display:none;
@@ -193,8 +318,14 @@ export default {
 /*********************** Animations ************************/
 .visible{
   display: flex;
+  opacity: 1;
 }
 .active-tab{
-    border-bottom: 2px solid var(--ter-color);
+    transform: translateY(-3px);
+    border-bottom: 3px solid var(--ter-color);
+}
+.active-tab:hover{
+    transform: translateY(-3px);
+    border-bottom: 3px solid var(--ter-color);
 }
 </style>
