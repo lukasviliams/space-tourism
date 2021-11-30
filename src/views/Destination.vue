@@ -9,7 +9,7 @@
 import NavigationComponent from "../components/navigation-component.vue";
 import DestinationComponent from "../components/destination-component.vue";
 export default {
-    components: { NavigationComponent, DestinationComponent }
+  components: { NavigationComponent, DestinationComponent }, 
 }
 </script>
 

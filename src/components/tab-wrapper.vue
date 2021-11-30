@@ -1,7 +1,12 @@
 <template>
   <div class="tabs">
     <div class="nav-container" >
-      <div v-for="title in tabTitle" :key="title" @click="selectedTitle = title" class="tabs-nav-text">
+      <div v-for="title in tabTitle" 
+      :key="title" 
+      @click="selectedTitle = title" 
+      class="tabs-nav-text"
+      :class="{selected: title == selectedTitle}"
+      >
         {{title}}
       </div>
     </div>
@@ -25,12 +30,17 @@ export default {
 </script>
 
 <style>
-.nav-container{
-  width: 100%;
+.tabs{
+  width: 80%;
   display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  margin-bottom: 5vh;
+  justify-content: flex-end;
+}
+.nav-container{
+  position: absolute;
+  z-index: 1;
+  margin-top: 5rem;
+  width: 40.5rem;
+  display: flex;
 }
 .nav-container .tabs-nav-text{
   margin-right: 3rem;
@@ -43,9 +53,13 @@ export default {
   color: var(--sec-color);
   border-bottom: 3px solid transparent;
   transition: all .1s ease-in-out;
+  padding-bottom: 2rem;
 }
 .tabs-nav-text:hover{
-  transform: translateY(-3px);
   border-bottom: 3px solid rgba(255, 255, 255, 0.5);
+}
+.selected {
+  color: var(--ter-color);
+  border-bottom: 3px solid var(--ter-color);
 }
 </style>
