@@ -10,10 +10,10 @@
   <div class="line"></div>
   <div class="router-container" ref="routerContainer">
       <div class="router-link-content">
-        <router-link class="nav-text" to="/"><span>00</span> Home</router-link>
-        <router-link class="nav-text" to="/destination"><span>01</span>Destination</router-link>
-        <router-link class="nav-text" to="/crew"><span>02</span>Crew</router-link>
-        <router-link class="nav-text" to="/technology"><span>03</span>Technology</router-link>
+        <router-link class="nav-text" :to="{name: 'Home'}"><span>00</span> Home</router-link>
+        <router-link class="nav-text" :to="{name: 'Destination'}"><span>01</span>Destination</router-link>
+        <router-link class="nav-text" :to="{name: 'Crew'}"><span>02</span>Crew</router-link>
+        <router-link class="nav-text" :to="{name: 'Technology'}"><span>03</span>Technology</router-link>
       </div>
   </div>
       <div class="btn-container" @click="handleBtnClick">
