@@ -1,7 +1,7 @@
 <template>
   <section class="crew-container">
     <div class="header">
-      <span>01</span>
+      <span>02</span>
       <p class="heading5">Meet your crew</p>
     </div>
     <tab>
@@ -232,7 +232,7 @@ export default {
   margin-left: 15rem;
 }
 .img{
-  height: 109%;
+  height: 100%;
   width: auto;
 }
 .dots-container{
@@ -246,7 +246,8 @@ export default {
   height: 15px;
   width: 15px;
   border-radius: 50%;
-  background-color: rgba(255, 255, 255, .17)
+  background-color: rgba(255, 255, 255, .17);
+  transition: all .2s;
 }
 .dot:hover{
   background-color:rgba(255, 255, 255, .5);
