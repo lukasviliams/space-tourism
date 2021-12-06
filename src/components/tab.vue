@@ -4,6 +4,8 @@
   <slot name="victor"/>
   <slot name="anousheh"/> 
   <slot name="launch"/> 
+  <slot name="spaceport"/> 
+  <slot name="spacecapsule"/> 
 </template>
 
 <script>

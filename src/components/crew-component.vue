@@ -203,7 +203,7 @@ export default {
 }
 .slot_container{
   display: none;
-  height: 65vh;
+  height: 70.5vh;
 }
 .slot_container-text{
   width: 40%;
@@ -240,7 +240,7 @@ export default {
   justify-content: space-between;
   align-items: center;
   width: 13.2rem;
-  margin: 0 0 0 10vw;
+  margin: -10rem 0 0 10vw;
 }
 .dot{
   height: 15px;

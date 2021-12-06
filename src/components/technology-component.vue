@@ -6,13 +6,13 @@
     </div>
     <div class="tab-container">
       <div class="numbers-container">
-        <div class="number">1</div>
-        <div class="number">2</div>
-        <div class="number">3</div>
+        <div class="number" ref="number1" @click="handleTabLaunch">1</div>
+        <div class="number" ref="number2" @click="handleTabSpaceport">2</div>
+        <div class="number" ref="number3" @click="handleTabSpaceCapsule">3</div>
       </div>
       <Tab>
         <template v-slot:launch>
-          <div class="slot_parrent-technology">
+          <div class="slot_parrent-technology" :class="{launch:isLaunch}">
             <div class="slot_container-technology">
               <div class="text-container">
                 <p class="nav-text">
@@ -30,7 +30,51 @@
               </div>
             </div>
             <div class="img_container-technology">
-              <img class="img" src="../assets/img/technology/image-launch-vehicle-portrait.jpg" alt="">
+              <img class="img" src="../assets/img/technology/image-launch-vehicle-portrait.jpg" alt="Could not fetched img, check src">
+            </div>
+          </div>
+        </template>
+        <template v-slot:spaceport>
+          <div class="slot_parrent-technology" :class="{spaceport:isSpaceport}">
+            <div class="slot_container-technology">
+              <div class="text-container">
+                <p class="nav-text">
+                  The terminology...
+                </p>
+                <p class="heading3">
+                  SPACEPORT
+                </p>
+                <p class="body-text">
+                  A spaceport or cosmodrome is a site for launching (or receiving) spacecraft, 
+                  by analogy to the seaport for ships or airport for aircraft. 
+                  Based in the famous Cape Canaveral, our spaceport is ideally situated to take advantage of the Earth’s rotation for launch.
+                </p>
+              </div>
+            </div>
+            <div class="img_container-technology">
+              <img class="img" src="../assets/img/technology/image-spaceport-portrait.jpg" alt="Could not fetched img, check src">
+            </div>
+          </div>
+        </template>
+        <template v-slot:spacecapsule>
+          <div class="slot_parrent-technology" :class="{spacecapsule:isSpacecapsule}">
+            <div class="slot_container-technology">
+              <div class="text-container">
+                <p class="nav-text">
+                  The terminology...
+                </p>
+                <p class="heading3">
+                  SPACE CAPSULE
+                </p>
+                <p class="body-text">
+                  A space capsule is an often-crewed spacecraft that uses a blunt-body reentry capsule to reenter the Earth's atmosphere without wings.
+                  Our capsule is where you'll spend your time during the flight. 
+                  It includes a space gym, cinema, and plenty of other activities to keep you entertained.
+                </p>
+              </div>
+            </div>
+            <div class="img_container-technology">
+              <img class="img" src="../assets/img/technology/image-space-capsule-portrait.jpg" alt="Could not fetched img, check src">
             </div>
           </div>
         </template>
@@ -40,10 +84,64 @@
 </template>
 
 <script>
+import { ref } from '@vue/reactivity';
 import Tab from "./tab.vue";
+import { onMounted } from '@vue/runtime-core';
 export default {
     name: "technologyComponent",
-    components: { Tab }
+    components: { Tab }, 
+    setup() {
+      // variables
+      const numbers = ref(null)
+      const number1 = ref(null)
+      const number2 = ref(null)
+      const number3 = ref(null)
+      const isLaunch = ref(true)
+      const isSpaceport = ref(false)
+      const isSpacecapsule = ref(false)
+
+      // Store number css into ref number
+      onMounted(()=>{
+        numbers.value = document.querySelectorAll('.number')
+        number1.value.classList.add('active')
+        // console.log(numbers.value);
+      })
+
+      // Handle Tabs 
+      const handleTabLaunch = () =>{
+        numbers.value.forEach(element => {
+          element.classList.remove('active')
+          number1.value.classList.add('active')
+          isSpaceport.value = false
+          isSpacecapsule.value = false
+          isLaunch.value = true
+        });
+      }
+      const handleTabSpaceport = () =>{
+        numbers.value.forEach(element => {
+          element.classList.remove('active')
+          number2.value.classList.add('active')
+          isSpaceport.value = true
+          isSpacecapsule.value = false
+          isLaunch.value = false
+        });
+      }
+      const handleTabSpaceCapsule = () =>{
+        numbers.value.forEach(element => {
+          element.classList.remove('active')
+          number3.value.classList.add('active')
+          isSpaceport.value = false
+          isSpacecapsule.value = true
+          isLaunch.value = false
+        });
+      }
+
+      return{
+        numbers,number1, number2, number3,
+        isLaunch,isSpaceport,isSpacecapsule,
+        handleTabLaunch,handleTabSpaceport,handleTabSpaceCapsule,
+        }
+    }
 }
 </script>
 
@@ -92,14 +190,19 @@ export default {
   align-items: center;
   border: 1px solid var(--shady-color);
   border-radius: 50%;
+  cursor: pointer;
+  transition: all .2s;
 
   font-family: 'bellefair';
   font-size: 32px;
   letter-spacing: 2px;
 }
+.number:hover{
+  border: 1px solid var(--ter-color);
+}
 .slot_parrent-technology{
   width: 100%;
-  display: flex ;
+  display: none ;
   justify-content: space-between;
 }
 .slot_container-technology{
@@ -128,5 +231,14 @@ img{
 .active{
   background-color: var(--ter-color);
   color: var(--main-color);
+}
+.launch{
+  display: flex;
+}
+.spaceport{
+  display: flex;
+}
+.spacecapsule{
+  display: flex;
 }
 </style>
