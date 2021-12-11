@@ -22,6 +22,7 @@
         </div>
         <div class="slot_container-img">
             <img class="img" src="../assets/img/crew/image-douglas-hurley.webp" alt="Could not fetch img check src">
+            <div class="img-line"></div>
         </div>
       </div>
     </template>
@@ -42,6 +43,7 @@
       </div>
       <div class="slot_container-img">
           <img class="img" src="../assets/img/crew/image-mark-shuttleworth.webp" alt="Could not fetch img check src">
+          <div class="img-line"></div>
       </div>
     </div>
   </template>
@@ -62,6 +64,7 @@
       </div>
       <div class="slot_container-img">
           <img class="img" src="../assets/img/crew/image-victor-glover.webp" alt="Could not fetch img check src">
+          <div class="img-line"></div>
       </div>
     </div>
   </template>
@@ -82,6 +85,7 @@
       </div>
       <div class="slot_container-img">
           <img class="img" src="../assets/img/crew/image-anousheh-ansari.webp" alt="Could not fetch img check src">
+          <div class="img-line"></div>
       </div>
     </div>
   </template>
@@ -305,7 +309,7 @@ export default {
     left: 5vw;
   }
 }
-@media only screen and (max-width:1200px) {
+@media only screen and (max-width:1300px) {
   .slot_container{
     justify-content: space-between;
   }
@@ -320,7 +324,7 @@ export default {
 }
 @media only screen and (max-width:1000px) {
 .crew-container{
-  height: calc(100vh - 8.5rem);
+  height: calc(100vh - 9rem);
 }
 }
 @media only screen and (max-width:945px) {
@@ -383,7 +387,52 @@ export default {
   left: 40%;
 }
 }
-
+@media only screen and (max-width:650px) {
+  .header {
+    width: 100vw;
+    position: static;
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+  }
+  .header span {
+    margin-right: 2rem;
+  }
+  .header span, .heading5 {
+    font-size: 16px;
+    letter-spacing: 2.7px;
+  }
+  .slot_container-img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    order: -1;
+    height: 50%;
+  }
+  .img{
+    height: 22.3rem;
+  }
+  .img-line{
+    width: 90vw;
+    border-bottom: 3px solid #383B4B;
+  }
+  .slot_container-text, .body-text, .heading3 {
+    width: 90vw;
+  }
+  .heading4 {
+    font-size: 16px;
+  }
+  .heading3 {
+    font-size: 24px;
+  }
+  .body-text {
+    line-height: 25px;
+    font-size: 15px;
+  }
+  .dots-container {
+    top: 48vh;
+    left: calc(50% - 7rem)
+  }
+}
 
 
 </style>
