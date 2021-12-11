@@ -22,4 +22,15 @@ export default {
   background-position: center;
   background-size: cover;
 }
+/*************** Responsive design ***********************/
+@media only screen and (max-width: 768px) {
+  .crew{
+    background-image: url(../assets/img/crew/background-crew-tablet.jpg);
+  }
+}
+@media only screen and (max-width: 375px) {
+  .crew {
+    background-image: url(../assets/img/crew/background-crew-mobile.jpg);
+  }
+}
 </style>>

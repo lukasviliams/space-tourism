@@ -86,12 +86,12 @@
     </div>
   </template>
   </tab>
-    <div class="dots-container">
-      <div class="dot" @click="douglasTab" ref="douglasDot"></div>
-      <div class="dot" @click="markTab" ref="markDot"></div>
-      <div class="dot" @click="victorTab" ref="victorDot"></div>
-      <div class="dot" @click="anoushehTab" ref="anoushehDot"></div>
-    </div>
+  <div class="dots-container">
+    <div class="dot" @click="douglasTab" ref="douglasDot"></div>
+    <div class="dot" @click="markTab" ref="markDot"></div>
+    <div class="dot" @click="victorTab" ref="victorDot"></div>
+    <div class="dot" @click="anoushehTab" ref="anoushehDot"></div>
+  </div>
   </section>
 </template>
 
@@ -155,6 +155,7 @@ export default {
         element.classList.remove('white')
       });
       victorDot.value.classList.add('white')
+      console.log(victorDot.value);
     }
     const anoushehTab = () =>{
       visibleDouglas.value = false
@@ -177,16 +178,20 @@ export default {
 
 <style scoped>
 .crew-container{
-    display: flex;
-    justify-content: flex-start;
-    flex-direction: column;
+  position: relative;
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  height: calc(100vh - 12.8rem);
 }
 .header{
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 20vw;
-    margin: 12vh 0 0 10vw;
+    width: 40rem;
+    position: absolute;
+    top: 10rem;
+    left: 10vw;
 }
 .header span{
   font-family: 'barlow';
@@ -203,15 +208,16 @@ export default {
 }
 .slot_container{
   display: none;
-  height: 70.5vh;
+  height: 100%;
 }
 .slot_container-text{
+  height: 100%;
   width: 40%;
   display: flex;
   justify-content: center;
   align-items: flex-start;
   flex-direction: column;
-  margin: 15vh 0 15vh 10vw;
+  margin-left: 10vw;
 }
 .heading4{
   text-transform: uppercase;
@@ -228,6 +234,9 @@ export default {
   width: 44rem;
 }
 .slot_container-img{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
   height: 100%;
   margin-left: 15rem;
 }
@@ -236,11 +245,13 @@ export default {
   width: auto;
 }
 .dots-container{
+  position: absolute;
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: 13.2rem;
-  margin: -10rem 0 0 10vw;
+  top: 75vh;
+  left: 10vw;
 }
 .dot{
   height: 15px;
@@ -271,4 +282,108 @@ export default {
 .white{
   background-color: var(--ter-color);
 }
+/*************************** Responsive design ****************************************/
+@media only screen and (max-width:1700px) {
+  .slot_container-img{
+    margin-left: 5rem;
+  }
+}
+@media only screen and (max-width:1475px) {
+  .slot_container-img{
+    margin-left: 0;
+  }
+}
+
+@media only screen and (max-width: 1400px) {
+  .slot_container-text{
+    margin-left: 5vw;
+  }
+  .header {
+    left: 5vw;
+  }
+  .dots-container{
+    left: 5vw;
+  }
+}
+@media only screen and (max-width:1200px) {
+  .slot_container{
+    justify-content: space-between;
+  }
+  .img{
+    height: 80%;
+  }
+}
+@media only screen and (max-width:1050px) {
+  .img{
+    height: 70%;
+  }
+}
+@media only screen and (max-width:1000px) {
+.crew-container{
+  height: calc(100vh - 8.5rem);
+}
+}
+@media only screen and (max-width:945px) {
+  .img{
+    height: 60%;
+  }
+}
+@media only screen and (max-width:850px) {
+.slot_container {
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+  }
+.slot_container-text, .slot_container-img{
+  margin: 0;
+}
+.slot_container-text{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 55%;
+  width: 50vw;
+}
+.body-text{
+  width: 53rem;
+}
+.slot_container-img{
+  height: 45%;
+}
+.img{
+  height: 100%;
+}
+.heading4{
+  font-size: 24px;
+  }
+.heading3{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 40px;
+  width: 53rem;
+}
+.body-text{
+  font-size: 16px;
+  line-height: 28px;
+  text-align: center;
+}
+.heading5{
+  font-size: 20px;
+}
+.header span {
+  font-size: 20px;
+}
+.header{
+  width: 30rem;
+  top: 5vh;
+}
+.dots-container{
+  top: 45%;
+  left: 40%;
+}
+}
+
+
+
 </style>
