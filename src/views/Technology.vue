@@ -22,4 +22,14 @@ export default {
   background-size: cover;
   background-position: center;
 }
+@media only screen and (max-width: 768px) {
+  .technology-container{
+    background-image: url('../assets/img/technology/background-technology-tablet.jpg');
+  }
+}
+@media only screen and (max-width: 375px) {
+  .technology-container{
+    background-image: url('../assets/img/technology/background-technology-mobile.jpg');
+  }
+}
 </style>

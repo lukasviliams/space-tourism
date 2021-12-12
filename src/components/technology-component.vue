@@ -30,7 +30,10 @@
               </div>
             </div>
             <div class="img_container-technology">
+              <picture>
+                <source media="(max-width: 1000px)" srcset="../assets/img/technology/image-launch-vehicle-landscape.jpg">
               <img class="img" src="../assets/img/technology/image-launch-vehicle-portrait.jpg" alt="Could not fetched img, check src">
+              </picture>
             </div>
           </div>
         </template>
@@ -52,7 +55,10 @@
               </div>
             </div>
             <div class="img_container-technology">
+              <picture>
+                <source media="(max-width:1000px)" srcset="../assets/img/technology/image-spaceport-landscape.jpg">
               <img class="img" src="../assets/img/technology/image-spaceport-portrait.jpg" alt="Could not fetched img, check src">
+              </picture>
             </div>
           </div>
         </template>
@@ -74,7 +80,10 @@
               </div>
             </div>
             <div class="img_container-technology">
+              <picture>
+                <source media="(max-width:1000px)" srcset="../assets/img/technology/image-space-capsule-landscape.jpg">
               <img class="img" src="../assets/img/technology/image-space-capsule-portrait.jpg" alt="Could not fetched img, check src">
+              </picture>
             </div>
           </div>
         </template>
@@ -146,16 +155,15 @@ export default {
 </script>
 
 <style scoped>
-/* .technology-component{
-  height: 74vh;
-  width:100vw;
-} */
+.technology-component{
+  position: relative;
+}
 .header{
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 20vw;
-    margin: 12vh 0 0 10vw;
+    width: 42rem;
+    margin: 10.5vh 0 0 10vw;
 }
 .header span{
   font-family: 'barlow';
@@ -240,5 +248,162 @@ img{
 }
 .spacecapsule{
   display: flex;
+}
+/************************************* Responsive design **********************************/
+@media only screen and (max-width:1100px) {
+  .numbers-container, .header {
+    margin-left: 1vw;
+  }
+  .numbers-container{
+    margin-right: 3vw;
+  }
+  .slot_container-technology{
+    width: 40rem;
+  }
+}
+@media only screen and (max-width:1000px) {
+  .header{
+    margin: 3rem 0 3rem 5rem;
+    width: 32rem;
+  }
+  .header span {
+    font-size: 20px;
+  }
+  .heading5{
+    font-size: 20px;
+    letter-spacing: 3.38px;
+  }
+  .tab-container{
+    flex-direction: column;
+  }
+  .numbers-container{ 
+    flex-direction: row;
+    width: 22vw;
+    margin: 0;
+    height: fit-content;
+    position: absolute; 
+    top: 53%;
+    left: 35%;
+  }
+  .number{
+    height: 58px;
+    width: 58px;
+    font-size: 24px;
+    letter-spacing: 1.5px;
+  }
+  .slot_parrent-technology{
+    flex-direction: column;
+  }
+  .slot_container-technology{
+    width: 100vw;
+    margin:0;
+    height: 40vh;
+  }
+  .text-container{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+  }
+  .nav-text{
+    font-size: 16px;
+    letter-spacing: 2.7px;
+  }
+  .heading3{
+    font-size: 40px;
+  }
+  .body-text{
+    width: 41rem;
+    font-size: 16px;
+    line-height: 28px;
+  }
+  .img_container-technology{
+    order: -1;
+  }
+  .img{
+    max-height: 31rem;
+  }
+}
+@media only screen and (max-width: 900px) {
+  .numbers-container{
+    width: 24vw;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .numbers-container{
+    width: 26vw;
+  }
+}
+@media only screen and (width: 768px) and (height: 1024px) {
+    .header{
+    margin: 6rem 0 6rem 5rem;
+    width: 32rem;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .numbers-container{
+    width: 32vw;
+  }
+}
+@media only screen and (max-width: 670px) {
+  .numbers-container{
+    top: 49%;
+    left: 33%;
+    width: 35vw;
+  }
+}
+@media only screen and (max-width: 545px) {
+  .numbers-container{
+    top: 47%;
+    left: 31%;
+    width: 39vw;
+  }
+}
+@media only screen and (max-width: 500px) {
+  .numbers-container{
+    top: 45%;
+    left: 28%;
+    width: 45vw;
+  }
+}
+@media only screen and (max-width: 444px) {
+  .header {
+    width: 25rem;
+  }
+  .header span {
+    font-size: 16px;
+    letter-spacing: 2.7px;
+  }
+  .heading5{
+    font-size: 16px;
+    letter-spacing: 2.7px;
+  }
+  .number{
+    height: 40px;
+    width: 40px;
+    font-size: 16px;
+    letter-spacing: 1px;
+  }
+  .nav-text{
+    font-size: 14px;
+    letter-spacing: 2.36px;
+  }
+  .heading3{
+    font-size: 24px;
+    letter-spacing: 0;
+    margin-bottom: 1.5rem;
+  }
+  .text-container{
+    margin-top: 12rem;
+  }
+  .body-text{
+    text-align: center;
+    line-height: 25px;
+    font-size: 15px;
+    letter-spacing: 0;
+    width: 85%;
+  }
 }
 </style>
