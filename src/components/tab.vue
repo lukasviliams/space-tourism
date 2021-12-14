@@ -6,6 +6,10 @@
   <slot name="launch"/> 
   <slot name="spaceport"/> 
   <slot name="spacecapsule"/> 
+  <slot name="moon"/> 
+  <slot name="mars"/> 
+  <slot name="europa"/> 
+  <slot name="titan"/> 
 </template>
 
 <script>
