@@ -157,7 +157,7 @@ export default {
         onMounted(()=>{
             destinationTabs.value = document.querySelectorAll('.nav_text-destination')
             destinationTabs.value[0].classList.add('active')
-            console.log(destinationTabs.value);
+            // console.log(destinationTabs.value);
         })
 
         // Handle tabs 
@@ -256,7 +256,8 @@ export default {
 }
 .text-container{
     margin-top: 25vh;
-    width: 22vw;
+    /* width: 22vw; */
+    width: 42rem
 }
 .nav-container{
     width: 25rem;
@@ -324,5 +325,153 @@ export default {
 }
 .titan{
     display: flex;
+}
+/* **********************Responsive design**************************** */
+@media only screen and (max-width: 1450px) {
+    .slot-container{
+        gap: 10vw;
+    }
+}
+@media only screen and (max-width: 1300px) {
+    .img-container {
+        margin-left: 5vw;
+    }
+}
+@media only screen and (max-width:1100px) {
+    .img-container{
+        height: 40vh;
+        margin-top: 30vh;
+    }
+}
+
+@media only screen and (max-width:950px) {
+    .slot-container{
+        flex-direction: column;
+        gap: 0;
+    }
+    .header{
+        top: 5rem;
+        left: 0;
+    }
+    .heading5, .header span{
+        font-size: 20px;
+        letter-spacing: 3.38px;
+    }
+    .header span {
+        margin-right: 3rem;
+    }
+    .img-container{
+    height: 25vh;
+    margin: 12vh 0 5vh 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    }
+    .text-container{
+        margin: 0;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .nav-container{
+        width: 30rem;
+        margin-bottom: 1.5rem;
+    }
+    .nav_text-destination{
+        font-size: 16px;
+        letter-spacing: 2.7px;
+    }
+    .heading2{
+        font-size: 80px;
+        letter-spacing: 0;
+        margin-bottom: 1.5rem;
+    }
+    .body-text{
+        width: 53rem;
+        font-size: 16px;
+        line-height: 28px;
+        text-align: center;
+        margin-bottom: 2rem;
+    }
+    .line{
+        width: 53rem;
+    }
+    .subheading2{
+        font-size: 14px;
+        letter-spacing: 2.36px;
+    }
+    .subheading1{
+        font-size: 28px;
+    }
+}
+@media only screen and (max-width:650px) {
+    .header{
+        position: static;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .heading5, .header span {
+        font-size: 16px;
+        letter-spacing: 2.7px;
+    }
+    .img-container{
+        margin-top: 3vh;
+    }
+    .nav_text-destination, .subheading2{
+        font-size: 14px;
+        letter-spacing: 2.36px;
+    }
+    .heading2{
+        font-size: 56px;
+    }
+    .body-text{
+        font-size: 15px;
+    }
+    .subheading1{
+        font-size: 28px;
+    }
+    .subheading-parrent{
+        width: 28rem;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .subheading-container:first-child{
+        margin:0 0 3rem 0 ;
+    }
+    .subheading-container{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+}
+@media only screen and (max-width:555px) {
+    .body-text{
+        width: 38rem;
+    }
+    .line{
+        width: 38rem;
+        margin-bottom: 2rem;
+    }
+}
+@media only screen and (max-width:420px) {
+    .body-text, .line{
+        width: 90%;
+    }
+}
+@media only screen and (max-width:340px) {
+    .nav-container{
+        width: 90%;
+    }
+}
+@media only screen and (max-width:300px) {
+    .img-container{
+        height: 15rem;
+    }
 }
 </style>
