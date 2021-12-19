@@ -262,6 +262,7 @@ span{
   background-color: rgba(255, 255, 255, 0.05);
   backdrop-filter: blur(15px);
   overflow: hidden;
+  z-index: 100;
 }
 span {
   display: block;
