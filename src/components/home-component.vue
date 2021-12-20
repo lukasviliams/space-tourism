@@ -7,16 +7,15 @@
      Well sit back, and relax because we’ll give you a truly out of this world experience!
   </p>
 </div>
-<div class="cta-circle">
+<router-link class="cta-circle" :to="{name:'Destination'}">
   <p class="heading4">Explore</p>
-</div>
+</router-link>
 </div>
 </template>
 
 <script>
 export default {
   name: 'homeComponent', 
-
 }
 </script>
 
@@ -41,6 +40,7 @@ export default {
   font-size: 22px;
 }
 .cta-circle{
+  text-decoration: none;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -113,6 +113,30 @@ export default {
     font-size: 15px;
     line-height: 25px;
     letter-spacing: 0;
+  }
+}
+/* Pixel 2XL */
+@media only screen and (width:411px) and (height:823px) {
+  .text-container{
+    margin-top: 5vh;
+  }
+}
+/* Iphone 5/SE */
+@media only screen and (width: 320px) and (height:568px) {
+  .home-container{
+    height: 90vh
+  }
+}
+/* Nest Hub */
+@media only screen and (width:1024px) and (height:600px) {
+  .home-container{
+    margin: 8vh 0 0 0;
+  }
+}
+/* Nest hub Max */ 
+@media only screen and (width: 1280px) and (height: 800px) {
+  .home-container{
+    margin: 16vh 0 0 0;
   }
 }
 </style>

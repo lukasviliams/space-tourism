@@ -10,10 +10,10 @@
   <div class="line"></div>
   <div class="router-container" ref="routerContainer">
       <div class="router-link-content">
-        <router-link class="nav-text" to="/"><span>00</span> Home</router-link>
-        <router-link class="nav-text" to="/destination"><span>01</span>Destination</router-link>
-        <router-link class="nav-text" to="/crew"><span>02</span>Crew</router-link>
-        <router-link class="nav-text" to="/technology"><span>03</span>Technology</router-link>
+        <router-link class="nav-text" :to="{name: 'Home'}"><span>00</span> Home</router-link>
+        <router-link class="nav-text" :to="{name: 'Destination'}"><span>01</span>Destination</router-link>
+        <router-link class="nav-text" :to="{name: 'Crew'}"><span>02</span>Crew</router-link>
+        <router-link class="nav-text" :to="{name: 'Technology'}"><span>03</span>Technology</router-link>
       </div>
   </div>
       <div class="btn-container" @click="handleBtnClick">
@@ -262,6 +262,7 @@ span{
   background-color: rgba(255, 255, 255, 0.05);
   backdrop-filter: blur(15px);
   overflow: hidden;
+  z-index: 100;
 }
 span {
   display: block;
@@ -279,6 +280,15 @@ span {
   top: 3.5rem;
   left: 90%;
 }
+}
+/* screens < 350 */ 
+@media only screen and (max-width: 350px) {
+  .circle{
+    top: 0;
+  }
+  .btn-container{
+    top: 1rem;
+  }
 }
 /*********************** animations ************************/
 .move{
