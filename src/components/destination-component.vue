@@ -474,4 +474,240 @@ export default {
         height: 15rem;
     }
 }
+
+/* *****************Mobile devices********************** */
+/* Moto G4 and Galaxy S5*/
+@media only screen and (width:360px) and (height: 640px) {
+    .destination-container{
+        margin-top: 4vh;
+        height: 86vh;
+    }
+    .img-container{
+        margin: 1vh 0;
+    }
+    .subheading-parrent{
+        flex-direction: row;
+        width: 90%;
+    }
+    .subheading-container,.subheading-container:first-child{
+        margin: 0;
+    }
+    .heading2{
+        margin-bottom: 1vh;
+    }
+    .subheading-container:first-child{
+        margin-right: auto;
+    }
+}
+
+/* Pixel 2 */
+@media only screen and (width: 411px) and (height:731px) {
+    .heading2{
+        margin-bottom: 1rem;
+    }
+    .subheading-container:first-child {
+        margin-bottom: 1rem;
+    }
+}
+/* Iphone 5SE */
+@media only screen and (width: 320px) and (height:568px) {
+    .nav-container{
+        margin-bottom: 0;
+    }
+    .heading2{
+        font-size: 40px;
+        margin-bottom: .5rem;
+    }
+    .body-text{
+        font-size: 13px;
+    }
+    .subheading-parrent{
+        flex-direction: row;
+    }
+    .subheading-container, .subheading-container:first-child{
+        margin: 0;
+    }
+    .subheading2{
+        font-size: 12px;
+    }
+    .subheading-container:first-child{
+        margin-right: auto;
+    }
+    .subheading1{
+        font-size: 24px;
+    }
+    .body-text{
+        margin-bottom: .5rem;
+    }
+    .img-container{
+        margin-bottom: 3vh;
+    }
+    .header{
+        margin-top: 3vh;
+    }
+}
+/* Iphone 6,7,8 */
+@media only screen and (width: 375px) and (height:667px) {
+    .header{
+        margin-top: 2rem;
+    }
+    .heading2{
+        margin-bottom: 1rem;
+    }
+    .subheading-parrent{
+        flex-direction: row;
+        width: 90%;
+    }
+    .text-container, .subheading-container:first-child{
+        margin: 0;
+    }
+    .subheading-container:first-child{
+        margin-right: auto;
+    }
+    .body-text{
+        margin-bottom: .5rem;
+    }
+    .line{
+        margin-bottom: 1.5rem;
+    }
+}
+/* Iphone 6 plus */
+@media only screen and (width: 414px) and (height: 736px) {
+    .header{
+        margin-top: 3vh;
+    }
+    .header span {
+        font-size: 18px;
+    }
+    .heading5{
+        font-size: 18px;
+    }
+    .subheading-parrent{
+        flex-direction: row;
+        width: 90%;
+    }
+    .subheading-container, .subheading-container:first-child{
+        margin: 0;
+    }
+    .subheading-container:first-child{
+        margin-right: auto;
+    }
+}
+/* Iphone X */ 
+@media only screen and (width: 375px) and (height: 812px) {
+    .subheading-container:first-child{
+        margin-bottom: 1.5rem;
+    }
+}
+/* Ipad pro */
+@media only screen and (width: 1024px) and (height: 1366px) {
+    .img-container{
+        height: 35vh;
+    }
+}
+/* Surface duo */
+@media only screen and (width: 540px) and (height: 720px) {
+    .subheading-parrent{
+        flex-direction: row;
+        width: 38rem;
+    }
+    .subheading-container, .subheading-container:first-child{
+        margin: 0;
+    }
+    .subheading-container:first-child{
+        margin-right: auto;
+    }
+}
+/* Galaxy fold */ 
+@media only screen and (width: 280px) and (height: 653px) {
+    .header{
+        margin-top: 3vh;
+    }
+    .heading5{
+        font-size: 14px;
+    }
+    .header span {
+        font-size: 14px;
+        margin-right: 1rem;
+    }
+    .heading2{
+        font-size: 40px;
+        margin-bottom: 1rem;
+    }
+    .nav-container{
+        margin-bottom: .5rem;
+    }
+    .body-text{
+        font-size: 14px;
+        margin-bottom: 1rem;
+    }
+    .subheading-parrent{
+        flex-direction: row;
+        width: 90%;
+    }
+    .subheading-container, .subheading-container:first-child{
+        margin: 0;
+    }
+    .subheading-container:first-child{
+        margin-right: auto;
+    }
+    .subheading2{
+        font-size: 10px;
+    }
+    .subheading1{
+        font-size: 20px;
+    }
+}
+/* Nest Hub */
+@media only screen and (width: 1024px) and (height: 600px) {
+    .header{
+        top: 5vh;
+        left: 6.5rem;
+    }
+    .heading2{
+        font-size: 68px;
+    }
+    .header span {
+        font-size: 24px;
+        margin-right: 3rem;
+    }
+    .heading5{
+        font-size: 24px;
+    }
+    .img-container{
+        margin-top: 25vh;
+    }
+    .text-container{
+        margin-top: 15vh;
+    }
+    .heading2, .nav-container{
+        margin-bottom: 1rem;
+    }
+    .body-text{
+        margin-bottom: 1rem;
+    }
+    .line{
+        margin-bottom: 2rem;
+    }
+}
+/* Nest hub Max  */
+@media only screen and (width: 1280px) and (height: 800px) {
+    .header{
+        top: 5vh;
+        left: 6.5rem;
+    }
+    .heading5{
+        font-size: 24px;
+    }
+    .header span {
+        font-size: 24px;
+        margin-right: 5rem;
+    }
+    .img-container{
+        margin-top: 20vh;
+    }
+    .text-container{
+        margin-top: 10vh;
+    }
+}
 </style>

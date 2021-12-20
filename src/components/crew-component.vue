@@ -433,6 +433,80 @@ export default {
     left: calc(50% - 7rem)
   }
 }
-
-
+/* Moto G4 */ 
+@media only screen and (width: 360px) and (height: 640px) {
+  .dots-container{
+    top: 52vh;
+  }
+  .slot_container-text{
+    margin-top: 3rem;
+  }
+}
+/* Iphone 5 */
+@media only screen and (width: 320px) and (height: 568px) {
+  .header{
+    margin: .5rem 0;
+  }
+  .dots-container{
+    top: 46vh;
+  }
+  .slot_container-text{
+    margin-top: 3rem;
+  }
+}
+/* Iphine 6 */ 
+@media only screen and (width: 375px) and (height: 667px) {
+  .dots-container{
+    top: 46vh;
+  }
+  .header{
+    margin: 2rem 0;
+  }
+}
+/* Ipad */ 
+@media only screen and (width: 768px) and (height: 1024px) {
+  .crew-container {
+    height: calc(100vh - 10.3rem);
+  }
+}
+/* Ipad pro */ 
+@media only screen and (width: 1024px) and (height: 1366px) {
+  .img{
+    height: 40%;
+  }
+  .heading5, .header span{
+    font-size: 40px;
+  }
+  .header{
+    width: 55rem;
+  }
+}
+/* Galaxz fold */ 
+@media only screen and (width: 280px) and (height: 653px) {
+  .header{
+    margin: 2rem 0;
+  }
+  .slot_container-text{
+    margin-top: 4rem;
+  }
+  .dots-container{
+    top: 46vh
+  }
+  .heading3{
+    font-size: 22px;
+  }
+}
+/* Nest Hub */ 
+@media only screen and (width: 1024px) and (height: 600px) {
+  .header{
+    top: 5vh;
+    left: 3vw;
+  }
+  .header span, .heading5 {
+    font-size: 22px;
+  }
+  .header span {
+    margin-right: 5rem;
+  }
+}
 </style>

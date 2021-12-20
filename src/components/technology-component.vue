@@ -406,4 +406,54 @@ img{
     width: 85%;
   }
 }
+/* Iphone 5 */
+@media only screen and (width: 320px) and (height: 568px) {
+  .number{
+    height: 35px;
+    width: 35px;
+  }
+  .header{
+    margin: 2rem 0 2rem 5rem;
+  }
+  .text-container{
+    margin-top: 16rem;
+  }
+}
+/* Surface duo */
+@media only screen and (width: 540px) and (height: 720px) {
+  .text-container {
+    margin-top: 10rem;
+  }
+  .number{
+    height: 45px;
+    width: 45px;
+  }
+  .numbers-container {
+    top: 50%;
+  }
+}
+/* Galaxy fold */
+@media only screen and (width: 280px) and (height: 653px) {
+  .header {
+    margin: 1rem 0 1rem 1rem;
+  }
+  .text-container{
+    margin-top: 15rem;
+  }
+  .numbers-container{
+    top: 38%;
+  }
+}
+/* Nest hub */
+@media only screen and (width: 1024px) and (height: 600px) {
+  .img{
+    height: 30rem;
+  }
+  .heading3{
+    font-size: 40px;
+  }
+  .slot_container-technology, .numbers-container{
+    margin-top: 3rem;
+  }
+}
 </style>

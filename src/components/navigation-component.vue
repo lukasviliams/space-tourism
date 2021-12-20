@@ -281,6 +281,15 @@ span {
   left: 90%;
 }
 }
+/* screens < 350 */ 
+@media only screen and (max-width: 350px) {
+  .circle{
+    top: 0;
+  }
+  .btn-container{
+    top: 1rem;
+  }
+}
 /*********************** animations ************************/
 .move{
   transform: translateX(-50rem);
