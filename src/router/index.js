@@ -24,6 +24,12 @@ const routes = [
     name:'Technology', 
     component:() => import ('../views/Technology.vue')
   },
+  // Catch All routes 404
+  {
+    path: '/:catchAll(.*)', 
+    name:'NotFound',
+    component: () => import('../views/NotFound.vue'),
+  },
 ]
 
 const router = createRouter({
