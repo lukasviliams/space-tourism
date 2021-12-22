@@ -464,13 +464,19 @@ export default {
         width: 90%;
     }
     .subheading-container:first-child{
-        margin: 0 0 1.5rem 0;
+        margin: 0 0 1rem 0;
     }
     .nav-container{
         margin: .5rem;
     }
     .img-container{
         margin: 3vh 0 2vh 0;
+    }
+    .heading2{
+        margin-bottom: .5rem;
+    }
+    .subheading2{
+        margin-bottom: .5rem;
     }
 }
 @media only screen and (max-width:340px) {
