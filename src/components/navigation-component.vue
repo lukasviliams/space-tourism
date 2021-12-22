@@ -54,6 +54,7 @@ export default {
   display: none;
   width: 4rem;
   height: 4rem;
+  z-index: 100;
 }
 .btn{
   position: relative;
