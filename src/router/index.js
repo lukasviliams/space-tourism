@@ -1,5 +1,8 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import Home from '../views/Home.vue'
+import Destination from '../views/Destination.vue'
+import Crew from '../views/Crew.vue'
+import Technology from '../views/Technology.vue'
 
     // component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
 
@@ -12,17 +15,17 @@ const routes = [
   {
     path:'/destination', 
     name:'Destination', 
-    component: () => import ('../views/Destination.vue')
+    component: Destination,
   }, 
   {
     path:'/crew', 
     name:'Crew', 
-    component: () => import ('../views/Crew.vue')
+    component: Crew,
   }, 
   {
     path:'/technology', 
     name:'Technology', 
-    component:() => import ('../views/Technology.vue')
+    component: Technology
   },
   // Catch All routes 404
   {
