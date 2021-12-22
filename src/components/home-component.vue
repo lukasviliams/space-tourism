@@ -24,7 +24,7 @@ export default {
   margin-top: 30vh;
   display: flex;
   justify-content: space-around;
-  align-items: flex-end;
+  align-items: center;
 }
 .text-container{
   width: 54rem;
