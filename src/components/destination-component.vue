@@ -463,6 +463,15 @@ export default {
     .body-text, .line{
         width: 90%;
     }
+    .subheading-container:first-child{
+        margin: 0 0 1.5rem 0;
+    }
+    .nav-container{
+        margin: .5rem;
+    }
+    .img-container{
+        margin: 3vh 0 2vh 0;
+    }
 }
 @media only screen and (max-width:340px) {
     .nav-container{
