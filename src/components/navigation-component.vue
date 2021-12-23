@@ -109,24 +109,6 @@ span{
     backdrop-filter: blur(15px);
     transition: all .3s ease-in-out;
 }
-.router-container {
-    width: 60%;
-    height: 100%;
-    background-color: rgba(255, 255, 255, 0.05);
-    backdrop-filter: blur(15px);
-}
-.router-container {
-    width: 60%;
-    height: 100%;
-    background-color: rgba(255, 255, 255, 0.05);
-    backdrop-filter: blur(15px);
-}
-.router-container {
-    width: 60%;
-    height: 100%;
-    background-color: rgba(255, 255, 255, 0.05);
-    backdrop-filter: blur(15px);
-}
 .navigation {
     width: 100vw;
     height: 12.8rem;
